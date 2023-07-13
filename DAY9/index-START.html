@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+    const p = document.querySelector('p')
+
+    // Regular
+    console.log('hello')
+
+    // Interpolated
+    console.log('hello %s world!' , `Fulan` )
+    
+    // Styled
+    console.log('%c i am some great text! ','font-size:20px; background:cyan; color:black; border-radius:10px;')
+
+    // warning!
+    console.warn('CapsLock bund kar Lassan!')
+
+    // Info
+    console.info('HeHe! Kutgya Phuddu.. :D')    
+
+    // Error :|
+    console.error('You were suppose to smile bruv! :(')
+
+    // Testing
+    console.assert(2 > 3, 'console.asset will only fire if the provided condition is false!')
+
+    // Viewing DOM Elements
+    console.dir(p)
+    
+    // clearing
+    console.clear()
+
+    // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`%c ${dog.name}`,'text-transform:UPPERCASE; font-size:20px;')
+
+      console.log(`THIS IS ${dog.name}.`)
+      console.log(`${dog.name} IS ${dog.age} YEARS OLD!`)
+
+      console.groupEnd()
+    })
+
+    // counting  
+    console.count('basically counts the console.counts()which currently are')
+    console.count('basically counts the console.counts()which currently are')
+    console.count('basically counts the console.counts()which currently are')
+    console.count('basically counts the console.counts()which currently are')
+    console.count('basically counts the console.counts()which currently are')
+
+    // timing
+    let link = 'https://api.github.com/users/wesbos'
+
+    console.time('fetch time')
+    fetch(link)
+    .then(data => data.json())
+    .then(data => {
+      console.timeEnd('fetch time')
+      // console.log(data)
+    })
+
+  </script>
+</body>
+</html>

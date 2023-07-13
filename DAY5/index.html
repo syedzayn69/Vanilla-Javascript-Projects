@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="panel1 panel">
+        <p>HEY</p>
+        <p>LET'S</p>
+        <p>DANCE</p>
+    </div>
+
+    <div class="panel2 panel">
+        <p>GIVE</p>
+        <p>TAKE</p>
+        <p>RECEIVE</p>
+    </div>
+
+    <div class="panel3 panel">
+        <p>EXPERIENCE</p>
+        <p>IT</p>
+        <p>TODAY</p>
+    </div>
+
+    <div class="panel4 panel">
+        <p>GIVE</p>
+        <p>ALL</p>
+        <p>YOU CAN</p>
+    </div>
+
+    <div class="panel5 panel">
+        <p>LIFE</p>
+        <p>IN</p>
+        <p>MOTION</p>
+    </div>
+</body>
+<script>
+let panelList = document.querySelectorAll('.panel')
+
+function extender(){
+    this.classList.toggle('open')
+    console.log(this.classList.toggle('open-active'))
+}
+
+panelList.forEach(elem => {
+    elem.addEventListener('click', extender)
+    
+});
+
+</script>
+</html>

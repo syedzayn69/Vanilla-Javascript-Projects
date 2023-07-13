@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 2rem;
+        }
+        .hint{
+            background: rgba(0, 0, 0, .5);
+            color: white;
+            visibility: hidden;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .visible{
+            visibility:visible;
+        }
+    </style>
+</head>
+<body>
+    <p>Guess the secret code... 😛</p>
+    <i class="hint">HINT: could it be 'BOOGEYMAN'</i>
+</body>
+<script>
+
+// HINT
+let hint = document.querySelector('i')
+let a = 0
+document.addEventListener('keydown',() => {
+    a++
+    if(a > 7){
+        hint.classList.add('visible')
+    }
+})
+
+//SECRET CODE
+let arr = []
+let secretCode = 'boogeyman'
+let secretCodeUC = 'BOOGEYMAN'
+
+window.addEventListener('keyup',(e) => {
+    arr.push(e.key)
+    arr.splice(-secretCode.length - 1, arr.length - secretCode.length)
+
+    if(arr.join('').includes(secretCode) || arr.join('').includes(secretCodeUC)){
+        cornify_add()
+    }
+})
+
+</script>
+<script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</html>

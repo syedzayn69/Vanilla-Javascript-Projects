@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Analog Clock</h1>
+        <div class="clock">
+            <div class="origin"></div>
+            <div class="hand sec"></div>
+            <div class="hand min"></div>
+            <div class="hand hrs"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    let clockSec = document.querySelector('.sec')
+    let clockMin = document.querySelector('.min')
+    let clockHrs = document.querySelector('.hrs')
+    
+    function setDate(){
+
+        let now = new Date()
+        
+        // FOR SECONDS
+        let sec = now.getSeconds()
+        let secDeg = ((sec / 60) * 360) + 90        
+        clockSec.style.transform =`rotate(${secDeg}deg)`
+        
+        // FOR MINUTES
+        let min = now.getMinutes()
+        let minDeg = ((min / 60) * 360) + 90
+        clockMin.style.transform =`rotate(${minDeg}deg)`
+        
+        // FOR HOURS
+        let hrs = now.getHours()
+        let hrsDeg = ((18 / 12) * 360) + 90
+        clockHrs.style.transform =`rotate(${hrsDeg}deg)`
+
+    }
+    setInterval(setDate,1000)
+
+</script>
+</html>
